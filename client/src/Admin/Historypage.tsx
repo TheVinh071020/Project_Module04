@@ -181,7 +181,10 @@ function Historypage() {
                     {e.status === "Xác nhận" ? (
                       <option value="Xác nhận">Xác nhận</option>
                     ) : (
-                      <option disabled value="Xác nhận">
+                      <option
+                        disabled={e.status !== "Chờ xác nhận"}
+                        value="Xác nhận"
+                      >
                         Xác nhận
                       </option>
                     )}
@@ -190,7 +193,10 @@ function Historypage() {
                     e.status === "Xác nhận" ? (
                       <option value="Đang giao hàng">Đang giao hàng</option>
                     ) : (
-                      <option disabled value="Đang giao hàng">
+                      <option
+                        disabled={e.status !== "Xác nhận"}
+                        value="Đang giao hàng"
+                      >
                         Đang giao hàng
                       </option>
                     )}
@@ -198,7 +204,7 @@ function Historypage() {
                     e.status === "Đang giao hàng" ? (
                       <option value="Đã giao hàng">Đã giao hàng</option>
                     ) : (
-                      <option disabled value="Đã giao hàng">
+                      <option disabled={e} value="Đã giao hàng">
                         Đã giao hàng
                       </option>
                     )}
@@ -206,7 +212,7 @@ function Historypage() {
                 </td>
                 <td>
                   <button
-                    style={{ width: "125px" }}
+                    style={{ width: "139px" }}
                     className="btn btn-success"
                   >
                     {e.status}
